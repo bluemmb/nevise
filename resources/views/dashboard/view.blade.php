@@ -13,9 +13,11 @@
 
         <div class="box-body" style="padding-bottom:80px;">
             @foreach ($projects as $project)
-                <div class="dashboard-item-box">
-                    {{$project->title}}
-                </div>
+                <a href="project/{{$project->id}}" style="text-decoration: none; color:inherit;">
+                    <div class="dashboard-item-box">
+                        {{$project->title}}
+                    </div>
+                </a>
             @endforeach
         </div>
 
