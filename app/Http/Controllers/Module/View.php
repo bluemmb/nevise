@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Module;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Project\Lib as Module_Lib;
+use App\Http\Controllers\Module\Lib as Module_Lib;
 
 class View extends Controller
 {
