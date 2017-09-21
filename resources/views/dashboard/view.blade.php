@@ -3,6 +3,6 @@
 @section('content')
     <h3>Dashboard</h3>
     <div>
-        {{$projects[0]->title}}
+        {{print_r($projects)}}
     </div>
 @endsection
