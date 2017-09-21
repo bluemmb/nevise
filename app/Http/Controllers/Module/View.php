@@ -15,9 +15,9 @@ class View extends Controller
         $this->lib=new Module_Lib();
     }
 
-    public function index($id)
+    public function index($pid, $mid)
     {
-        $plugins = $this->lib->selectAll($id);
+        $plugins = $this->lib->selectAll($mid);
         return view("module.view" , ["plugins" => $plugins] );
     }
 }

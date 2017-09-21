@@ -23,4 +23,4 @@ Route::get( "dashboard" , "Dashboard\View@index" );
 Route::get('project/{id}','Project\View@index');
 
 
-Route::get('module/{id}', 'Module\View@index');
+Route::get('project/{pid}/module/{mid}', 'Module\View@index');
