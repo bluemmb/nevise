@@ -11,35 +11,49 @@
 
     <div class="container" style="margin-top:50px;">
 
-        <?php $i=0; ?>
-        @foreach ($plugins as $plugin)
+        <div class="col-sm-8">
 
-            @if ( $i==0 )
-                <div class="row" style="margin-top:30px;">
-                    @endif
+            <div class="search-box">
+                <form class="form-horizontal" method="POST" style="margin-bottom:0px;">
+                    {{ csrf_field() }}
 
-                    <div class="col-sm-4">
-                        <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}">
-                            <div class="box project-box">
-                                <h4 class="box-header project-box-header">
-                                    <i class="fa fa-book" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
-                                    {{$plugin->title}}
-                                </h4>
+                    <div class="row">
+                        <div class="col-md-2" style="padding-right:2px;">
+                            <button type="submit" class="btn btn-default" style="width:100%;">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                Search
+                            </button>
+                        </div>
 
-                                <div class="box-body project-box-body">
-                                    Lorem ipsum dolor sit amet, ea sit causae quaeque. Vel ut porro scripta expetendis, est hendrerit posidonium deterruisset te, at est omnesque fabellas contentiones. Mazim copiosae cotidieque per an. Cu eam agam explicari efficiendi, meliore adipisci invenire ad cum. Appareat forensibus te nec.
-                                </div>
-                            </div>
-                        </a>
+                        <div class="col-md-10" style="padding-left:2px;">
+                            <input id="search_text" type="text" class="form-control" name="search_text">
+                        </div>
                     </div>
 
-                    <?php $i = $i+1; ?>
-                    @if ( $i==3 )
-                </div>
-                <?php $i=0; ?>
-            @endif
+                </form>
+            </div>
 
-        @endforeach
+            @foreach ($plugins as $plugin)
+
+                <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}">
+                    <div class="box plugin-box">
+                        <h4 class="box-header plugin-box-header">
+                            <i class="fa fa-file-text-o" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
+                            {{$plugin->title}}
+                        </h4>
+
+                        <div class="box-body plugin-box-body">
+                            Lorem ipsum dolor sit amet, ea sit causae quaeque. Vel ut porro scripta expetendis, est hendrerit posidonium deterruisset te, at est omnesque fabellas contentiones. Mazim copiosae cotidieque per an. Cu eam agam explicari efficiendi, meliore adipisci invenire ad cum. Appareat forensibus te nec.
+                        </div>
+                    </div>
+                </a>
+
+            @endforeach
+        </div>
+
+        <div class="col-sm-4" style="padding:30px;">
+            Menu ....
+        </div>
 
     </div>
 @endsection
