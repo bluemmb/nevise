@@ -13,7 +13,7 @@
 
         <div class="box-body" style="padding-bottom:80px;">
             @foreach ($projects as $project)
-                <div class="project-box">
+                <div class="dashboard-item-box">
                     {{$project->title}}
                 </div>
             @endforeach
