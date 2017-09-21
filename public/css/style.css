@@ -1,4 +1,10 @@
 
+.not-link
+{
+    text-decoration: none !important;
+    color: inherit;
+}
+
 .page-title
 {
     position: absolute;

@@ -4,7 +4,11 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 @section('content')
-    <div class="page-title">Project > Project Title</div>
+    <div class="page-title">
+        <a class="not-link" href="/dashboard">Projects</a>
+        >
+        <a class="not-link" href="/project/{{ $project->id }}">{{ $project->title }}</a>
+    </div>
 
     <div class="container" style="margin-top:50px;">
 
@@ -16,7 +20,7 @@
             @endif
 
                     <div class="col-sm-4">
-                        <a href="#" style="text-decoration: none !important; color: inherit;">
+                        <a href="#" class="not-link">
                             <div class="box project-box">
                                 <h4 class="box-header project-box-header">
                                     <i class="fa fa-book" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>

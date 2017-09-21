@@ -17,7 +17,9 @@ class View extends Controller
 
     public function index($id)
     {
+        $project = $this->lib->getProjectDetails($id);
         $modules = $this->lib->selectAll($id);
-        return view("project.view" , ["modules" => $modules] );
+
+        return view("project.view" , ["modules" => $modules , "project" => $project] );
     }
 }
