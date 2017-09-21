@@ -20,4 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get( "dashboard" , "Dashboard\View@index" );
+Route::get('project/{id}','Project\View@index');
 
