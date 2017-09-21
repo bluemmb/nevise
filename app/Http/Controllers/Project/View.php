@@ -10,13 +10,14 @@ class View extends Controller
 {
     public $lib;
 
-    function _construct()
+    function __construct()
     {
         $this->lib=new Project_Lib();
     }
 
-    public function index()
+    public function index($id)
     {
-        
+        $modules = $this->lib->selectAll($id);
+        return view("project.view" , ["modules" => $modules] );
     }
 }
