@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-<!-- Styles -->
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
 @section('content')
     <div class="page-title">
         <a class="not-link" href="/dashboard">Projects</a>
@@ -20,7 +17,7 @@
             @endif
 
                     <div class="col-sm-4">
-                        <a href="#" class="not-link">
+                        <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}">
                             <div class="box project-box">
                                 <h4 class="box-header project-box-header">
                                     <i class="fa fa-book" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>

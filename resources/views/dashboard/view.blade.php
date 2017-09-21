@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-<!-- Styles -->
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
 @section('content')
     <div class="page-title">Dashboard</div>
 
