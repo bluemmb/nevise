@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Module;
 
 use App\Http\Controllers\Controller;
-
 use App\Http\Controllers\Project\Lib as Module_Lib;
 
 class View extends Controller
@@ -17,7 +16,10 @@ class View extends Controller
 
     public function index($pid, $mid)
     {
+        $project = $this->lib->getProjectDetails($pid);
+        $module  = $this->lib->getModuleDetails($mid);
         $plugins = $this->lib->selectAll($mid);
-        return view("module.view" , ["plugins" => $plugins] );
+
+        return view("module.view" , ["plugins" => $plugins , "project" => $project , "module" => $module] );
     }
 }
