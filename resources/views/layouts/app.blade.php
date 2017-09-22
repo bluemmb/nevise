@@ -73,6 +73,14 @@
             </div>
         </nav>
 
+        @if ( session( "message" ) )
+            <div class="container message-box-container" onclick="this.style.display = 'none';">
+                <div class="message-box">
+                    {{ session( "message" ) }}
+                </div>
+            </div>
+        @endif
+
         @yield('content')
     </div>
 
