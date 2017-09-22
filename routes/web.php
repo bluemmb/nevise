@@ -53,3 +53,14 @@ Route::get('project/{pid}/module/delete/{mid}','Module\Edit@delete');
 Route::post('project/{pid}/module/delete/{mid}','Module\Edit@handle_delete');
 
 Route::get('project/{pid}/module/{mid}', 'Module\View@index');
+
+
+// --- Plugin Routes
+Route::get('project/{pid}/module/{mid}/plugin/insert','Plugin\Edit@insert');
+Route::post('project/{pid}/module/{mid}/plugin/insert','Plugin\Edit@handle_insert');
+
+Route::get('project/{pid}/module/{mid}/plugin/update/{lid}','Plugin\Edit@update');
+Route::post('project/{pid}/module/{mid}/plugin/update/{lid}','Plugin\Edit@handle_update');
+
+Route::get('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@delete');
+Route::post('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@handle_delete');

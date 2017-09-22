@@ -7,6 +7,8 @@
         <a class="not-link" href="/project/{{ $project->id }}">{{ $project->title }}</a>
         >
         <a class="not-link" href="/project/{{ $project->id }}/module/{{ $module->id }}">{{ $module->title }}</a>
+        >
+        <a class="not-link" href="/project/{{ $project->id }}/module/{{ $module->id }}/plugin/{{$plugin->id}}">{{ $plugin->title }}</a>
     </div>
 
     <div class="container" style="margin-top:50px;">
@@ -48,10 +50,10 @@
                         {{$plugin->title}}
 
                         <div style="display:inline-block; float:right">
-                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/delete/{{$plugin->id}}" class="plugin-item-action">
+                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/delete/{{$module->id}}" class="plugin-item-action">
                                 <i class="fa fa-times" aria-hidden="true"></i>
                             </a>
-                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/update/{{$plugin->id}}" class="plugin-item-action">
+                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/update/{{$module->id}}" class="plugin-item-action">
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </a>
                         </div>

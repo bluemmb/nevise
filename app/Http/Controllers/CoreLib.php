@@ -25,4 +25,14 @@ class CoreLib
 
         return $module_details[0];
     }
+
+    public function getPluginDetails($id)
+    {
+        $plugin_details = DB::select( "select * from plugins where id = ? limit 1" , [ $id ] );
+
+        if ( count( $plugin_details ) == 0 )
+            return null;
+
+        return $plugin_details[0];
+    }
 }
