@@ -12,10 +12,10 @@
 
         <div class="box-body dashboard-box-body">
             @foreach ($projects as $project)
-                <div class="dashboard-item-box">
-                    <a href="project/{{$project->id}}" style="text-decoration: none; color:inherit; display:inline-block" class="dashboard-item-title">
+                <div class="dashboard-item-box" onclick="window.location='project/{{$project->id}}'">
+                    <span style="text-decoration: none; color:inherit; display:inline-block" class="dashboard-item-title">
                         {{$project->title}}
-                    </a>
+                    </span>
                     <div style="display:inline-block; float:right">
                         <a href="/project/delete/{{$project->id}}" class="dashboard-item-action">
                             <i class="fa fa-times" aria-hidden="true"></i>

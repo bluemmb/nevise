@@ -9,6 +9,13 @@
 
     <div class="container" style="margin-top:50px;">
 
+        <div class="action-box">
+            <a href="/project/{{$project->id}}/module/insert" style="font-size:16px;">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add
+            </a>
+        </div>
+
         <?php $i=0; ?>
         @foreach ($modules as $module)
 
@@ -17,18 +24,25 @@
             @endif
 
                     <div class="col-sm-4">
-                        <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}">
-                            <div class="box project-box">
-                                <h4 class="box-header project-box-header">
-                                    <i class="fa fa-book" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
-                                    {{$module->title}}
-                                </h4>
+                        <div class="box project-box" onclick="window.location = '/project/{{$project->id}}/module/{{$module->id}}'">
+                            <h4 class="box-header project-box-header">
+                                <i class="fa fa-book" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
+                                {{$module->title}}
 
-                                <div class="box-body project-box-body">
-                                    Lorem ipsum dolor sit amet, ea sit causae quaeque. Vel ut porro scripta expetendis, est hendrerit posidonium deterruisset te, at est omnesque fabellas contentiones. Mazim copiosae cotidieque per an. Cu eam agam explicari efficiendi, meliore adipisci invenire ad cum. Appareat forensibus te nec.
+                                <div style="display:inline-block; float:right">
+                                    <a href="/project/{{$project->id}}/module/delete/{{$module->id}}" class="project-item-action">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="/project/{{$project->id}}/module/update/{{$module->id}}" class="project-item-action">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
                                 </div>
+                            </h4>
+
+                            <div class="box-body project-box-body">
+                                {{$module->description}}
                             </div>
-                        </a>
+                        </div>
                     </div>
 
             <?php $i = $i+1; ?>

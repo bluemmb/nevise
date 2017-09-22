@@ -43,4 +43,13 @@ Route::get('project/{id}','Project\View@index');
 
 
 // --- Module Routes
+Route::get('project/{pid}/module/insert','Module\Edit@insert');
+Route::post('project/{pid}/module/insert','Module\Edit@handle_insert');
+
+Route::get('project/{pid}/module/update/{mid}','Module\Edit@update');
+Route::post('project/{pid}/module/update/{mid}','Module\Edit@handle_update');
+
+Route::get('project/{pid}/module/delete/{mid}','Module\Edit@delete');
+Route::post('project/{pid}/module/delete/{mid}','Module\Edit@handle_delete');
+
 Route::get('project/{pid}/module/{mid}', 'Module\View@index');

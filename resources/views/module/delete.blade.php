@@ -20,8 +20,10 @@
     <div class="page-title">
         <a class="not-link" href="/dashboard">Projects</a>
         >
-        <a class="not-link" href="/project/{{ $project->id }}">
-            Delete Project : {{ $project->title }}
+        <a class="not-link" href="/project/{{$project->id}}">{{$project->title}}</a>
+        >
+        <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}">
+            Delete Module : {{$module->title}}
         </a>
     </div>
 
@@ -30,18 +32,18 @@
         <div class="box form-box" style="width:500px;">
 
             <div class="box-header form-box-header">
-                Delete Project
+                Delete Module
             </div>
 
             <div class="box-body form-box-body">
                 <form class="form-horizontal" method="POST" style="margin-bottom:0px;">
                     {{ csrf_field() }}
-                    <input type="hidden" name="title" value="{{ $project->title  }}" />
+                    <input type="hidden" name="title" value="{{ $module->title  }}" />
 
                     <div class="form-group">
                         <h4 class="col-md-12" style="line-height: 1.5em;">
                             You are about to <span style="color:#900;">DELETE</span>
-                                the Project : <span style="color:#00a7d0;">{{ $project->title  }}</span><br>
+                                the Module : <span style="color:#00a7d0;">{{ $module->title  }}</span><br>
                             Are you sure ?
                         </h4>
                     </div>
@@ -49,7 +51,7 @@
                     <div class="form-group" style="margin-top:40px;">
                         <div class="col-md-12" style="text-align:right;">
 
-                            <a href="/dashboard" class="btn btn-default">
+                            <a href="/project/{{$project->id}}" class="btn btn-default">
                                 Cancel
                             </a>
 
