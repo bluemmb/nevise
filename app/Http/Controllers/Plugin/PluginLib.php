@@ -8,5 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class PluginLib extends CoreLib
 {
-
+    public function __construct()
+    {
+        // Accessing plugins list : Plugins::$plugins
+    }
 }
