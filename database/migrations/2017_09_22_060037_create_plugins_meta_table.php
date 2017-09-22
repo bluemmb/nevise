@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulesTable extends Migration
+class CreatePluginsMetaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateModulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('modules', function (Blueprint $table) {
+        Schema::create('plugins_meta', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('description');
+            $table->integer('plugin_id')->unsigned()->index();
+            $table->foreign('plugin_id')->references('id')->on('plugins');
+            $table->string('key');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateModulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modules');
+        Schema::dropIfExists('plugins_meta');
     }
 }

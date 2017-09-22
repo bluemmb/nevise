@@ -14,12 +14,12 @@ class CreateProjectsModulesTable extends Migration
     public function up()
     {
         Schema::create('projects_modules', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
             $table->integer('module_id')->unsigned();
             $table->foreign('module_id')->references('id')->on('modules');
             $table->timestamps();
+            $table->index(['project_id','module_id']);
         });
     }
 

@@ -17,8 +17,11 @@ class CreatePluginsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('type');
+            $table->mediumText('content');
+            $table->mediumText('searchable');
             $table->timestamps();
         });
+        DB::statement('alter table plugins add fulltext search(searchable)');
     }
 
     /**
@@ -28,6 +31,9 @@ class CreatePluginsTable extends Migration
      */
     public function down()
     {
+        Schema::table('plugins', function($table) {
+            $table->dropIndex('search');
+        });
         Schema::dropIfExists('plugins');
     }
 }
