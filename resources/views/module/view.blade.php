@@ -33,20 +33,34 @@
                 </form>
             </div>
 
+            <div class="action-box">
+                <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/insert" style="font-size:16px;">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add
+                </a>
+            </div>
+
             @foreach ($plugins as $plugin)
 
-                <a class="not-link" href="/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}">
-                    <div class="box plugin-box">
-                        <h4 class="box-header plugin-box-header">
-                            <i class="fa fa-file-text-o" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
-                            {{$plugin->title}}
-                        </h4>
+                <div class="box plugin-box" onclick="window.location='/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}'">
+                    <h4 class="box-header plugin-box-header">
+                        <i class="fa fa-file-text-o" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
+                        {{$plugin->title}}
 
-                        <div class="box-body plugin-box-body">
-                            Lorem ipsum dolor sit amet, ea sit causae quaeque. Vel ut porro scripta expetendis, est hendrerit posidonium deterruisset te, at est omnesque fabellas contentiones. Mazim copiosae cotidieque per an. Cu eam agam explicari efficiendi, meliore adipisci invenire ad cum. Appareat forensibus te nec.
+                        <div style="display:inline-block; float:right">
+                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/delete/{{$module->id}}" class="plugin-item-action">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </a>
+                            <a href="/project/{{$project->id}}/module/{{$module->id}}/plugin/update/{{$module->id}}" class="plugin-item-action">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
                         </div>
+                    </h4>
+
+                    <div class="box-body plugin-box-body">
+                        {{$plugin->content}}
                     </div>
-                </a>
+                </div>
 
             @endforeach
         </div>
