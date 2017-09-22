@@ -9,7 +9,11 @@ class Lib extends CoreLib
 {
     public function selectAll($id)
     {
-        $modules=DB::select('select * from modules where id in (select module_id from projects_modules where project_id=?)',[$id]);
+        $modules=DB::select('select * from modules where 
+                                 id in (select module_id from projects_modules where project_id=?) 
+                               AND 
+                                 deleted = FALSE
+                            ',[$id]);
         return $modules;
     }
 
@@ -27,7 +31,8 @@ class Lib extends CoreLib
 
     public function delete($id)
     {
-        DB::delete( "delete from projects where id=?" , [ $id ] );
+        DB::update( "update projects set deleted=? where id=?"
+                            , [ true , $id ] );
         return true;
     }
 }

@@ -17,6 +17,7 @@ class CreateModulesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
+            $table->boolean("deleted")->default(false);
             $table->timestamps();
         });
     }

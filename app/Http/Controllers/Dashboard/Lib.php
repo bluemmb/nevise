@@ -9,7 +9,7 @@ class Lib extends CoreLib
 {
     public function selectAll()
     {
-        $projects = DB::select( "select * from projects" );
+        $projects = DB::select( "select * from projects where deleted = FALSE" );
         return $projects;
     }
 }

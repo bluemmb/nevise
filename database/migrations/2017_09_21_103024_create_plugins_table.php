@@ -19,6 +19,7 @@ class CreatePluginsTable extends Migration
             $table->string('type');
             $table->mediumText('content');
             $table->mediumText('searchable');
+            $table->boolean("deleted")->default(false);
             $table->timestamps();
         });
         DB::statement('alter table plugins add fulltext search(searchable)');
