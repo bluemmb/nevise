@@ -31,9 +31,15 @@ class CreatePluginsTable extends Migration
      */
     public function down()
     {
-        Schema::table('plugins', function($table) {
-            $table->dropIndex('search');
-        });
-        Schema::dropIfExists('plugins');
+        if (Schema::hasTable('plugins')) {
+
+            Schema::table('plugins', function($table) {
+                $fulltexts = DB::select( DB::raw('SHOW KEYS FROM plugins WHERE Index_type="FULLTEXT"') );
+                foreach ($fulltexts as $fulltext)
+                    $table->dropIndex($fulltext->Key_name);
+            });
+
+            Schema::dropIfExists('plugins');
+        }
     }
 }
