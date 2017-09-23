@@ -32,4 +32,18 @@ class Lib extends CoreLib
                         [ $mid , $lid ] );
         return true;
     }
+
+
+
+
+
+    public function editor($pid , $mid , $lid)
+    {
+        $plugins = new Plugins();
+
+        $project = $this->getProjectDetails($pid);
+        $module = $this->getProjectDetails($mid);
+        $plugin  = $this->getPluginDetails($lid);
+        return $plugins->plugins[ $plugin->type ]->Editor( $project , $module , $plugin );
+    }
 }

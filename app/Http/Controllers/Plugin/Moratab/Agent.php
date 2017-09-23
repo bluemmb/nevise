@@ -6,7 +6,19 @@ use App\Http\Controllers\Plugin\PluginAgent;
 
 class Agent implements PluginAgent
 {
-    public function View($id) {}
-    public function Editor($id) {}
-    public function SearchView($id,$text) {}
+    public function View($project , $module , $plugin)
+    {
+
+    }
+
+    public function Editor($project , $module , $plugin)
+    {
+        return view( "plugin.moratab.editor" ,
+                        [ "project" => $project , "module" => $module , "plugin" => $plugin ] );
+    }
+
+    public function SearchView($project , $module , $plugin , $text)
+    {
+
+    }
 }

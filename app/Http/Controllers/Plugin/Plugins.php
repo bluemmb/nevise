@@ -6,11 +6,11 @@ use App\Http\Controllers\Plugin\Moratab\Agent as MoratabAgent;
 
 class Plugins
 {
-    public static $plugins = [];
+    public $plugins = [];
 
     public function __construct()
     {
-        $plugins["moratab"] = new MoratabAgent();
+        $this->plugins["moratab"] = new MoratabAgent();
     }
 }
 
