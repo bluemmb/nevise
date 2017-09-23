@@ -56,4 +56,14 @@ class Lib extends CoreLib
         $plugin  = $this->getPluginDetails($lid);
         return $plugins->plugins[ $plugin->type ]->View( $project , $module , $plugin );
     }
+
+    public function smallview($pid , $mid , $lid)
+    {
+        $plugins = new Plugins();
+
+        $project = $this->getProjectDetails($pid);
+        $module  = $this->getModuleDetails($mid);
+        $plugin  = $this->getPluginDetails($lid);
+        return $plugins->plugins[ $plugin->type ]->SmallView( $project , $module , $plugin );
+    }
 }
