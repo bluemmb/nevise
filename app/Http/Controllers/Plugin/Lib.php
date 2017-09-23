@@ -42,7 +42,7 @@ class Lib extends CoreLib
         $plugins = new Plugins();
 
         $project = $this->getProjectDetails($pid);
-        $module = $this->getProjectDetails($mid);
+        $module  = $this->getModuleDetails($mid);
         $plugin  = $this->getPluginDetails($lid);
         return $plugins->plugins[ $plugin->type ]->Editor( $project , $module , $plugin );
     }
