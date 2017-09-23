@@ -67,6 +67,7 @@ Route::get('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@delete'
 Route::post('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@handle_delete');
 
 Route::get('project/{pid}/module/{mid}/plugin/{lid}/editor','Plugin\Lib@editor');
+Route::get('project/{pid}/module/{mid}/plugin/{lid}/view','Plugin\Lib@view');
 
 
 // --- Ajax Routes

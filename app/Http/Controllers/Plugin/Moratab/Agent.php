@@ -8,7 +8,8 @@ class Agent implements PluginAgent
 {
     public function View($project , $module , $plugin)
     {
-
+        return view( "plugin.moratab.view" ,
+            [ "project" => $project , "module" => $module , "plugin" => $plugin ] );
     }
 
     public function Editor($project , $module , $plugin)
