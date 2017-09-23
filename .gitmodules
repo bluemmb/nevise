@@ -1,0 +1,3 @@
+[submodule "public/plugins/moratab"]
+	path = public/plugins/moratab
+	url = http://git.hackage.ir/bluemmb/moratab.git
