@@ -102,4 +102,4 @@
 
 </script>
 
-<?php include public_path() . '/plugins/moratab/index.blade.php'; ?>
+<?php include public_path() . '/plugins/moratab/nevise_editor.php'; ?>
