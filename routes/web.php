@@ -22,7 +22,8 @@ Auth::routes();
 
 
 // --- Home Routes
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get( "home" , "Dashboard\View@index" );
 
 
 // --- Dashboard Routes
