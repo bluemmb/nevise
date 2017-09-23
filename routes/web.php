@@ -64,3 +64,7 @@ Route::post('project/{pid}/module/{mid}/plugin/update/{lid}','Plugin\Edit@handle
 
 Route::get('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@delete');
 Route::post('project/{pid}/module/{mid}/plugin/delete/{lid}','Plugin\Edit@handle_delete');
+
+Route::get('project/{pid}/module/{mid}/plugin/{lid}/editor','Plugin\Lib@editor');
+
+

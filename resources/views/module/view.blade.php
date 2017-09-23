@@ -42,7 +42,7 @@
 
             @foreach ($plugins as $plugin)
 
-                <div class="box plugin-box" onclick="window.location='/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}'">
+                <div class="box plugin-box" onclick="window.location='/project/{{$project->id}}/module/{{$module->id}}/plugin/{{$plugin->id}}/editor'">
                     <h4 class="box-header plugin-box-header">
                         <i class="fa fa-file-text-o" aria-hidden="true" style="margin:2px 5px; font-size:20px;"></i>
                         {{$plugin->title}}
