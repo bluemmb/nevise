@@ -20,7 +20,7 @@
 
     <style>
         html, body {
-            color: #f5f6f7;
+            color: #585c5f;
             font-family: 'IRMitra', Raleway,sans-serif;
             font-weight: 100;
             height: 100vh;
